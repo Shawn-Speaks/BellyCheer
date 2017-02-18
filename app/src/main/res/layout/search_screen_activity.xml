@@ -16,6 +16,7 @@
         android:background="@drawable/background2">
 
         <ImageView
+            android:id="@+id/imageview_bellycheer_logo"
             android:layout_width="150dp"
             android:layout_height="60dp"
             android:layout_gravity="top"
@@ -23,6 +24,7 @@
             android:src="@drawable/bellycheerlogo" />
 
         <TextView
+            android:id="@+id/textview_find_a_food_pantry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -33,6 +35,7 @@
 
 
         <TextView
+            android:id="@+id/enter_your_zipcode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -42,14 +45,15 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/editext_zipcode"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:hint="ZipCode"
-            android:paddingTop="20dp"
-            android:textStyle="bold" />
+            android:paddingTop="20dp" />
 
         <Button
+            android:id="@+id/button_go"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -57,6 +61,7 @@
             android:background="@color/cardview_light_background"/>
 
         <TextView
+            android:id="@+id/textview_filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -72,16 +77,19 @@
             android:orientation="horizontal">
 
             <RadioButton
+                android:id="@+id/radiobutton_foodpantry"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Food Pantry" />
 
             <RadioButton
+                android:id="@+id/radiobutton_soupKitchen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Soup Kitchen" />
 
             <RadioButton
+                android:id="@+id/radiobutton_both"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Both" />
@@ -90,6 +98,7 @@
 
 
         <TextView
+            android:id="@+id/textview_or"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -100,6 +109,7 @@
 
 
         <TextView
+            android:id="@+id/textview_bycurrent_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -110,6 +120,7 @@
 
 
         <ImageButton
+            android:id="@+id/imagebutton_googlemap"
             android:layout_width="100dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
