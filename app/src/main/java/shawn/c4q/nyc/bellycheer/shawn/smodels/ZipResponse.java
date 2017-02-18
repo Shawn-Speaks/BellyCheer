@@ -1,6 +1,6 @@
 package shawn.c4q.nyc.bellycheer.shawn.smodels;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by shawnspeaks on 2/18/17.
@@ -8,6 +8,9 @@ import java.util.List;
 
 public class ZipResponse {
 
-    private List<ZipObject> zipObjectList;
+    private ArrayList<PostalCodes> postalCodes = new ArrayList<>();
 
+    public ArrayList<PostalCodes> getPostalCodesList() {
+        return postalCodes;
+    }
 }
