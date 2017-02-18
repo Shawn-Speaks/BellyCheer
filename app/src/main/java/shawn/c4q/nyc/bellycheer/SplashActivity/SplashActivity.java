@@ -1,5 +1,6 @@
 package shawn.c4q.nyc.bellycheer.SplashActivity;
 
+import android.animation.TimeAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -20,15 +21,21 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        setAnimation();
-
+        setAnimation1();
+        setAnimation2();
 
     }
 
-    public void setAnimation() {
-        Animation animation = AnimationUtils.loadAnimation(SplashActivity.this, R.anim.anim_move_up);
-        ImageView iv = (ImageView) findViewById(R.id.iv_bellycheer_foods);
-        iv.setAnimation(animation);
+    public void setAnimation1() {
+        Animation animation1 = AnimationUtils.loadAnimation(SplashActivity.this, R.anim.anim_slide_left);
+        ImageView bellycheer = (ImageView) findViewById(R.id.iv_bellycheer_logo);
+        bellycheer.startAnimation(animation1);
+    }
+
+    public void setAnimation2() {
+        Animation animation2 = AnimationUtils.loadAnimation(SplashActivity.this, R.anim.anim_move_up);
+        ImageView foods = (ImageView) findViewById(R.id.iv_bellycheer_foods);
+        foods.setAnimation(animation2);
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -39,8 +46,8 @@ public class SplashActivity extends AppCompatActivity {
             }
         }, 6000);
 
-    }
 
+    }
 
 }
 
