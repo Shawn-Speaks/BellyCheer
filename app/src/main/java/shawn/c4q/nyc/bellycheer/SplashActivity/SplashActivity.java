@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-
 import shawn.c4q.nyc.bellycheer.HomeActivity.HomeActivity;
 import shawn.c4q.nyc.bellycheer.MainActivity;
 import shawn.c4q.nyc.bellycheer.R;
@@ -42,7 +41,7 @@ public class SplashActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+                startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 finish();
             }
         }, 6000);
