@@ -25,10 +25,10 @@ public class PantryVH extends RecyclerView.ViewHolder {
 
     public void onBind(Rows rows) {
         name.setText(rows.getName());
-        address.setText(rows.getStreetAddress());
-        cityStateZip.setText(rows.getCity() + ", " + rows.getState() + " " + Integer.toString(rows.getZipCode()));
-        phone.setText(rows.getPhoneNumber());
-        hoursOfOperation.setText(rows.getHoursOfOperation());
+        address.setText(rows.getStreetaddress());
+        cityStateZip.setText(rows.getCity() + ", " + rows.getState() + " " + Integer.toString(rows.getZipcode()));
+        phone.setText(rows.getPhonenumber());
+        hoursOfOperation.setText(rows.getHoursofoperation());
     }
 
 }

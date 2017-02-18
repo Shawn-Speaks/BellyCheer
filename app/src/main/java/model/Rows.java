@@ -4,30 +4,30 @@ import java.io.Serializable;
 
 public class Rows implements Serializable {
     private String name;
-    private String briefDescription;
-    private String streetAddress;
+    private String briefdescription;
+    private String streetaddress;
     private String city;
     private String state;
-    private int zipCode;
-    private String phoneNumber;
-    private String hoursOfOperation;
+    private int zipcode;
+    private String phonenumber;
+    private String hoursofoperation;
     private String intake;
     private String fee;
     private String features;
     private String eligibility;
-    private String requiredDocuments;
+    private String requireddocuments;
     private String languages;
 
     public String getName() {
         return name;
     }
 
-    public String getBriefDescription() {
-        return briefDescription;
+    public String getBriefdescription() {
+        return briefdescription;
     }
 
-    public String getStreetAddress() {
-        return streetAddress;
+    public String getStreetaddress() {
+        return streetaddress;
     }
 
     public String getCity() {
@@ -38,16 +38,16 @@ public class Rows implements Serializable {
         return state;
     }
 
-    public int getZipCode() {
-        return zipCode;
+    public int getZipcode() {
+        return zipcode;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhonenumber() {
+        return phonenumber;
     }
 
-    public String getHoursOfOperation() {
-        return hoursOfOperation;
+    public String getHoursofoperation() {
+        return hoursofoperation;
     }
 
     public String getIntake() {
@@ -66,8 +66,8 @@ public class Rows implements Serializable {
         return eligibility;
     }
 
-    public String getRequiredDocuments() {
-        return requiredDocuments;
+    public String getRequireddocuments() {
+        return requireddocuments;
     }
 
     public String getLanguages() {
