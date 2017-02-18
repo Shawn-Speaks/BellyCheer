@@ -1,9 +1,11 @@
-package shawn.c4q.nyc.bellycheer;
+package shawn.c4q.nyc.bellycheer.SplashActivity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import shawn.c4q.nyc.bellycheer.R;
+
+public class SplashActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
