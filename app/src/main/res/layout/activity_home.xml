@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="shawn.c4q.nyc.bellycheer.HomeActivity.HomeActivity">
+
+    <ImageView
+        android:id="@+id/iv_home_bellycheer"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/bellycheer_logo" />
+
+    <ImageButton
+        android:id="@+id/iv_home_food_locations"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/location_foood"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/iv_home_bellycheer"/>
+
+    <!--<ImageButton-->
+        <!--android:id="@+id/iv_home_friend_locations"-->
+        <!--android:layout_width="225dp"-->
+        <!--android:layout_height="225dp"-->
+        <!--android:src="@drawable/location_dine_friend"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_below="@id/iv_home_food_locations"/>-->
+
+
+</RelativeLayout>

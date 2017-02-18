@@ -3,6 +3,10 @@
     package="shawn.c4q.nyc.bellycheer">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
 
     <application
         android:allowBackup="true"
@@ -10,7 +14,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashActivity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,6 +24,13 @@
         <activity android:name=".PantryRecyclerViewActivity">
 
         </activity>
+        <activity android:name=".SearchScreenActivity"/>
+
+        <activity android:name=".MainActivity" />
+        <activity android:name=".HomeActivity.HomeActivity"/>
+
+        <activity android:name=".shawn.TestCurrentZipActivity"/>
+
     </application>
 
 </manifest>
