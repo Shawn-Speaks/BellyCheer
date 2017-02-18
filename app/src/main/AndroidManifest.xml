@@ -19,10 +19,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SearchScreenActivity"/>
+
         <activity android:name=".MainActivity" />
-        <activity android:name=".HomeActivity.HomeActivity"></activity>
+        <activity android:name=".HomeActivity.HomeActivity"/>
 
         <activity android:name=".shawn.TestCurrentZipActivity"/>
+
     </application>
 
 </manifest>
