@@ -1,135 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/search_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@color/White"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".SearchScreenActivity">
 
+    <ImageView
+        android:id="@+id/iv_search_bellycheer_logo"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/et_address"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="170dp"
+        android:clickable="true"
+        android:src="@drawable/bellycheer_logo" />
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/iv_location_text_top"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:orientation="vertical"
-        android:background="@drawable/background2">
-
-        <ImageView
-            android:id="@+id/imageview_bellycheer_logo"
-            android:layout_width="150dp"
-            android:layout_height="60dp"
-            android:layout_gravity="top"
-            android:paddingLeft="25dp"
-            android:src="@drawable/bellycheerlogo" />
-
-        <TextView
-            android:id="@+id/textview_find_a_food_pantry"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingTop="20dp"
-            android:text="Find a Food Pantry or Soup Kitchen"
-            android:textSize="20dp"
-            android:textStyle="italic|bold" />
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="70dp"
+        android:src="@drawable/search_top_texts" />
 
 
-        <TextView
-            android:id="@+id/enter_your_zipcode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingTop="10dp"
-            android:text="Enter your zipcode to find a nearest site "
-            android:textSize="15dp"
-            android:textStyle="bold" />
+    <EditText
+        android:id="@+id/et_address"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_location_text_top"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/Address"
+        android:textColorHint="#5e6366" />
 
-        <EditText
-            android:id="@+id/editext_zipcode"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:hint="ZipCode"
-            android:paddingTop="20dp" />
+    <Spinner
+        android:id="@+id/spinner_borough"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/et_address"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp"
+        android:drawSelectorOnTop="true"
+        android:entries="@array/boroughs_array"
+        android:popupTheme="@android:style/ThemeOverlay.Material.Light"
+        android:prompt="@string/borough_prompt"
+        android:spinnerMode="dropdown" />
 
-        <Button
-            android:id="@+id/button_go"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="GO"
-            android:background="@color/cardview_light_background"/>
+    <EditText
+        android:id="@+id/et_zip"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinner_borough"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:hint="@string/Zip"
+        android:inputType="number"
+        android:textColorHint="#5e6366" />
 
-        <TextView
-            android:id="@+id/textview_filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingTop="30dp"
-            android:text="Filter"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/radiobutton_foodpantry"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Food Pantry" />
-
-            <RadioButton
-                android:id="@+id/radiobutton_soupKitchen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Soup Kitchen" />
-
-            <RadioButton
-                android:id="@+id/radiobutton_both"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Both" />
-
-        </LinearLayout>
+    <ImageView
+        android:id="@+id/bt_current_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_zip"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:src="@drawable/icon_current_location" />
 
 
-        <TextView
-            android:id="@+id/textview_or"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingTop="30dp"
-            android:text="OR "
-            android:textSize="25dp"
-            android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/iv_icon_kitchen"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_below="@+id/bt_current_location"
+        android:layout_marginTop="29dp"
+        android:layout_toEndOf="@+id/iv_icon_food_pantry"
+        android:src="@drawable/icon_soup_kitchen" />
 
 
-        <TextView
-            android:id="@+id/textview_bycurrent_location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingTop="5dp"
-            android:text="By Current Location "
-            android:textSize="15dp"
-            android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/iv_icon_food_pantry"
+        android:layout_width="80dp"
+        android:layout_height="82dp"
+        android:layout_alignEnd="@+id/iv_search_bellycheer_logo"
+        android:layout_alignTop="@+id/iv_icon_kitchen"
+        android:layout_marginEnd="12dp"
+        android:layout_marginLeft="46dp"
+        android:src="@drawable/icon_food_pantry" />
+
+    <ImageView
+        android:id="@+id/iv_icon_both"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:layout_alignTop="@+id/iv_icon_kitchen"
+        android:layout_toEndOf="@+id/iv_icon_kitchen"
+        android:src="@drawable/icon_both_foods" />
 
 
-        <ImageButton
-            android:id="@+id/imagebutton_googlemap"
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:paddingTop="10dp"
-            android:src="@drawable/google_map" />
-
-    </LinearLayout>
-
-
-</LinearLayout>
+</RelativeLayout>
