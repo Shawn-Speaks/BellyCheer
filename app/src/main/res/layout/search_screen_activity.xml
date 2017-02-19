@@ -37,7 +37,7 @@
 
         <EditText
             android:id="@+id/editext_zipcode"
-            android:layout_width="125dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal"
@@ -47,6 +47,7 @@
             android:maxLines="1"
             android:maxLength="5"
             android:ellipsize="start"
+            android:inputType="number"
             android:hint="Enter Zip Code" />
 
         <TextView
