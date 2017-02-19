@@ -1,4 +1,4 @@
-package shawn.c4q.nyc.bellycheer.HomeActivity;
+package shawn.c4q.nyc.bellycheer.homeactivity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
