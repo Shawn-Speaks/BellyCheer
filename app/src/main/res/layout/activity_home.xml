@@ -15,27 +15,29 @@
         android:id="@+id/iv_home_bellycheer"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_marginBottom="50dp"
         android:src="@drawable/bellycheer_logo" />
 
     <ImageButton
         android:id="@+id/iv_home_food_locations"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/location_foood"
+        android:layout_below="@id/iv_home_bellycheer"
         android:layout_centerHorizontal="true"
         android:onClick="onClick"
-        android:layout_below="@id/iv_home_bellycheer"/>
+        android:src="@drawable/location_foood" />
 
-    <!--<ImageButton-->
-        <!--android:id="@+id/iv_home_friend_locations"-->
-        <!--android:layout_width="225dp"-->
-        <!--android:layout_height="225dp"-->
-        <!--android:src="@drawable/location_dine_friend"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_below="@id/iv_home_food_locations"/>-->
+    <ImageButton
+        android:id="@+id/iv_home_meal_delivery"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_below="@id/iv_home_food_locations"
+        android:layout_centerHorizontal="true"
+        android:background="@color/White"
+        android:onClick="onClick"
+        android:src="@drawable/home_meal_delivery" />
 
 
 </RelativeLayout>
