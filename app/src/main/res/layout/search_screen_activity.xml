@@ -57,7 +57,7 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="GO"
+            android:text="Submit"
             android:background="@color/cardview_light_background"/>
 
         <TextView
@@ -75,24 +75,6 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/radiobutton_foodpantry"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Food Pantry" />
-
-            <RadioButton
-                android:id="@+id/radiobutton_soupKitchen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Soup Kitchen" />
-
-            <RadioButton
-                android:id="@+id/radiobutton_both"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Both" />
 
         </LinearLayout>
 
