@@ -26,7 +26,6 @@
 
         <activity android:name=".homeactivity.HomeActivity"/>
 
-
     </application>
 
 </manifest>
