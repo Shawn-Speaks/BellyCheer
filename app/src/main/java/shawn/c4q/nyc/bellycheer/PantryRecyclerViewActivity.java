@@ -47,13 +47,15 @@ public class PantryRecyclerViewActivity extends AppCompatActivity {
         call.enqueue(new Callback<PantryResponse>() {
             @Override
             public void onResponse(Call<PantryResponse> call, Response<PantryResponse> response) {
-                if (response.body().getRows().size() == 0) {
-                    loadingText.setText("No Sites Found in this Location.");
+//              if(response.body() != (null)){
+                    if (response.body().getRows().size() == 0) {
+                        loadingText.setText("No Sites Found in this Location.");
+                    }
+                    adapter = new PantryAdapter(response.body().getRows());
+                    pantryRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                    pantryRecyclerView.setAdapter(adapter);
                 }
-                adapter = new PantryAdapter(response.body().getRows());
-                pantryRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                pantryRecyclerView.setAdapter(adapter);
-            }
+//            }
 
             @Override
             public void onFailure(Call<PantryResponse> call, Throwable t) {

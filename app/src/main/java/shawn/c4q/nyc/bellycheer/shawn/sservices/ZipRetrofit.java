@@ -19,16 +19,14 @@ import static android.content.ContentValues.TAG;
 
 public class ZipRetrofit {
 
-    private Location mLocation;
     private ZipUrlBuilder mZipUrlBuilder;
 
-    public ZipRetrofit(Location mLocation) {
-        this.mLocation = mLocation;
+    public ZipRetrofit(Location mLocation, final ZipRetrofitListener zl) {
         mZipUrlBuilder = ZipUrlBuilder.getInstance();
 
         mZipUrlBuilder.addToMap("lat", String.valueOf(mLocation.getLatitude()));
         mZipUrlBuilder.addToMap("lng", String.valueOf(mLocation.getLongitude()));
-        mZipUrlBuilder.addToMap("username", "demo");
+        mZipUrlBuilder.addToMap("username", "shawnspeaks");
 
         Call<ZipResponse> call = mZipUrlBuilder.listJSON();
         call.enqueue(new Callback<ZipResponse>() {
@@ -38,6 +36,7 @@ public class ZipRetrofit {
                 ZipResponse zipResponse = response.body();
                 ArrayList<PostalCodes> zipObjectList = zipResponse.getPostalCodesList();
                 Log.d(TAG, "Current zipCode is " + zipObjectList.get(0).getPostalCode());
+                zl.successfulCall(zipObjectList.get(0).getPostalCode());
             }
 
             @Override
@@ -46,7 +45,12 @@ public class ZipRetrofit {
             }
         });
 
-
-
     }
+
+    public interface ZipRetrofitListener{
+        void successfulCall(String zip);
+    }
+
+
+
 }

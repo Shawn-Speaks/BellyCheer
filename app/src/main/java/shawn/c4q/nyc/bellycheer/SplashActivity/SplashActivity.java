@@ -1,4 +1,4 @@
-package shawn.c4q.nyc.bellycheer.SplashActivity;
+package shawn.c4q.nyc.bellycheer.splashactivity;
 
 import android.content.Intent;
 import android.os.Bundle;

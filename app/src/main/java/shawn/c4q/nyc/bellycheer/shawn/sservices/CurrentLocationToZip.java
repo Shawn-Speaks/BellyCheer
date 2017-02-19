@@ -1,7 +1,6 @@
-package shawn.c4q.nyc.bellycheer.shawn;
+package shawn.c4q.nyc.bellycheer.shawn.sservices;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -16,7 +15,7 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 
-import shawn.c4q.nyc.bellycheer.shawn.sservices.ZipRetrofit;
+import shawn.c4q.nyc.bellycheer.SearchScreenActivity;
 
 import static android.content.ContentValues.TAG;
 
@@ -27,11 +26,11 @@ import static android.content.ContentValues.TAG;
 public class CurrentLocationToZip implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener{
 
     private GoogleApiClient mGoogleClient;
-    private Activity activity;
+    private SearchScreenActivity activity;
     private Context context;
 
 
-    public CurrentLocationToZip(Activity activity, Context context) {
+    public CurrentLocationToZip(SearchScreenActivity activity, Context context) {
         this.activity = activity;
         this.context = context;
     }
@@ -57,7 +56,7 @@ public class CurrentLocationToZip implements GoogleApiClient.ConnectionCallbacks
         Toast.makeText(activity, mCurrentLocation.toString(), Toast.LENGTH_SHORT).show();
         Log.d(TAG, String.valueOf(mCurrentLocation.getLatitude()));
         Log.d(TAG, String.valueOf(mCurrentLocation.getLongitude()));
-        new ZipRetrofit(mCurrentLocation);
+        new ZipRetrofit(mCurrentLocation, activity);
         mGoogleClient.disconnect();
     }
 

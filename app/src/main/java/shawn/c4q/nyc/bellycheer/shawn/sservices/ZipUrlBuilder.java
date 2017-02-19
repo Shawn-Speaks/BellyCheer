@@ -19,7 +19,7 @@ public class ZipUrlBuilder {
     private static NearbyZipService service;
     private Map<String, String> queryParams = new HashMap<>();
 
-    public static ZipUrlBuilder getInstance(){
+public static ZipUrlBuilder getInstance(){
         if(instance == null){
             instance = new ZipUrlBuilder();
         }

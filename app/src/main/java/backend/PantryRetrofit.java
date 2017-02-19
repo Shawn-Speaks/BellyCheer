@@ -9,6 +9,6 @@ public class PantryRetrofit {
     String currentZip;
     String siteType;
     String dietaryRestrictions;
-    String dayOfWeek
+    String dayOfWeek;
 
 }
