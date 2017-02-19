@@ -6,10 +6,10 @@ package shawn.c4q.nyc.bellycheer.shawn.smodels;
  */
 public class Geometry {
 
-
     private Location location;
 
     public Location getLocation() {
         return location;
     }
+
 }
