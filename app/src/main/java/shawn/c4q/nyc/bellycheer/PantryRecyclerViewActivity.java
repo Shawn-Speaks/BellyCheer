@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import backend.PantryService;
@@ -48,9 +49,11 @@ public class PantryRecyclerViewActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<PantryResponse> call, Response<PantryResponse> response) {
 //              if(response.body() != (null)){
+
                     if (response.body().getRows().size() == 0) {
                         loadingText.setText("No Sites Found in this Location.");
-                    }
+                    } else
+                        loadingText.setVisibility(View.GONE);
                     adapter = new PantryAdapter(response.body().getRows());
                     pantryRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                     pantryRecyclerView.setAdapter(adapter);
