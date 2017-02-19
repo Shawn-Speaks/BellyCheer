@@ -15,6 +15,7 @@
         android:id="@+id/loading_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
         android:gravity="center_horizontal"
         android:text="Please Wait - Loading Locations...."
         android:textSize="20sp"
@@ -50,6 +51,11 @@
         </android.support.v7.widget.RecyclerView>
 
     </FrameLayout>
-
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/pantry_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_25dp">
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>
