@@ -5,111 +5,91 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#FFFFFF"
     tools:context=".SearchScreenActivity">
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:orientation="vertical"
-        android:background="@drawable/background2">
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/imageview_bellycheer_logo"
-            android:layout_width="150dp"
-            android:layout_height="60dp"
-            android:layout_gravity="top"
-            android:paddingLeft="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_margin="20dp"
+            android:padding="2dp"
+            android:background="#ff000000"
             android:src="@drawable/bellycheerlogo" />
 
         <TextView
             android:id="@+id/textview_find_a_food_pantry"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:paddingTop="20dp"
-            android:text="Find a Food Pantry or Soup Kitchen"
+            android:gravity="center_horizontal"
+            android:text="Find Your Nearest Food Pantry\nor Soup Kitchen"
             android:textSize="20dp"
-            android:textStyle="italic|bold" />
-
-
-        <TextView
-            android:id="@+id/enter_your_zipcode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingTop="10dp"
-            android:text="Enter your zipcode to find a nearest site "
-            android:textSize="15dp"
+            android:textColor="#FF000000"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editext_zipcode"
-            android:layout_width="80dp"
+            android:layout_width="125dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:hint="ZipCode"
-            android:paddingTop="20dp" />
-
-        <Button
-            android:id="@+id/button_go"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Submit"
-            android:background="@color/cardview_light_background"/>
-
-        <TextView
-            android:id="@+id/textview_filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingTop="30dp"
-            android:text="Filter"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-        </LinearLayout>
-
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:textColor="#FF000000"
+            android:textColorHint="#AA000000"
+            android:maxLines="1"
+            android:maxLength="5"
+            android:ellipsize="start"
+            android:hint="Enter Zip Code" />
 
         <TextView
             android:id="@+id/textview_or"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingTop="30dp"
-            android:text="OR "
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="OR"
             android:textSize="25dp"
+            android:textColor="#FF000000"
             android:textStyle="bold" />
-
 
         <TextView
             android:id="@+id/textview_bycurrent_location"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingTop="5dp"
-            android:text="By Current Location "
-            android:textSize="15dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="By Current Location"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="20dp"
+            android:textColor="#FF000000"
             android:textStyle="bold" />
-
 
         <ImageButton
             android:id="@+id/imagebutton_googlemap"
             android:layout_width="100dp"
-            android:layout_height="80dp"
+            android:layout_height="100dp"
             android:layout_gravity="center"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:paddingTop="10dp"
+            android:scaleType="centerCrop"
+            android:background="#ffffff"
             android:src="@drawable/google_map" />
+
+        <ImageButton
+            android:id="@+id/submit_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitCenter"
+            android:background="#FFFFFF"
+            android:src="@drawable/location_foood" />
 
     </LinearLayout>
 
