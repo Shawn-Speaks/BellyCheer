@@ -3,6 +3,12 @@
     <string name="Address">Address</string>
     <string name="Borough">Borough</string>
     <string name="Zip">Zip</string>
+    <string name="Currency">Currency</string>
+    <string name="edit_cardnumber_hint">Cardnumber</string>
+    <string name="edit_expirydate_hint">Expiry Date</string>
+    <string name="edit_cvc_hint">CVC</string>
+    <string name="edit_email_hint">Email</string>
+    <string name="edit_ref_desc_hint">Description</string>
     <string name="borough_prompt">Choose a Borough</string>
     <string-array name="boroughs_array">
         <item>Bronx</item>
