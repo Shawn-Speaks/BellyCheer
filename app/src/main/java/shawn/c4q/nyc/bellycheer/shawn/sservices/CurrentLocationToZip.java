@@ -54,7 +54,6 @@ public class CurrentLocationToZip implements GoogleApiClient.ConnectionCallbacks
         }
 
         Location mCurrentLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleClient);
-        Toast.makeText(activity, mCurrentLocation.toString(), Toast.LENGTH_SHORT).show();
         Log.d(TAG, String.valueOf(mCurrentLocation.getLatitude()));
         Log.d(TAG, String.valueOf(mCurrentLocation.getLongitude()));
         new ZipRetrofit(mCurrentLocation, activity);

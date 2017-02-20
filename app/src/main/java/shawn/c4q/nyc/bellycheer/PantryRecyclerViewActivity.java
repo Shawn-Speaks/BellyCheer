@@ -1,16 +1,21 @@
 package shawn.c4q.nyc.bellycheer;
 
+import android.Manifest;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
-import android.app.Dialog;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,10 +25,11 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-
-import com.google.android.gms.maps.model.LatLng;
 
 import java.io.IOException;
 import java.util.List;
@@ -56,6 +62,7 @@ public class PantryRecyclerViewActivity extends AppCompatActivity implements OnM
         setContentView(R.layout.activity_pantry_recycler_view);
         Intent intent = getIntent();
         context = getApplicationContext();
+        Bundle bundle = getIntent().getParcelableExtra("bundle");
         zipCode = intent.getStringExtra("zipCode");
         loadingText = (TextView) findViewById(R.id.loading_textview);
         pantryRecyclerView = (RecyclerView) findViewById(R.id.pantry_recyclerview);
@@ -70,10 +77,12 @@ public class PantryRecyclerViewActivity extends AppCompatActivity implements OnM
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        mMap.setMyLocationEnabled(true);
+        CameraPosition cameraPosition = new CameraPosition.Builder().target(new LatLng(40.74209,-73.93551579999999)).zoom(12).build();
+        googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
     }
 
     public boolean googleServicsAvailable() {
@@ -122,6 +131,7 @@ public class PantryRecyclerViewActivity extends AppCompatActivity implements OnM
                         String t = row.getName();
                         Log.d(TAG, t + " " +" : "+ s);
                     }
+                updateMap(mMap, rowList);
             }
 
             @Override
@@ -152,4 +162,19 @@ public class PantryRecyclerViewActivity extends AppCompatActivity implements OnM
         }
         return place;
     }
+
+    private void updateMap(GoogleMap googleMap, List<Rows> rows){
+        for(Rows row: rows){
+            BitmapDescriptor bitIcon = BitmapDescriptorFactory.fromResource(R.drawable.small_soup);
+            googleMap.addMarker(new MarkerOptions().position(row.getLatLng()).title(row.getName()).icon(bitIcon));
+        }
+    }
+
+
+    private Drawable resizeSoupIcon(Drawable image){
+        Bitmap b = ((BitmapDrawable) image).getBitmap();
+        Bitmap bitMapResized = Bitmap.createScaledBitmap(b, 20, 20, false);
+        return new BitmapDrawable(getResources(), bitMapResized);
+    }
+
 }
