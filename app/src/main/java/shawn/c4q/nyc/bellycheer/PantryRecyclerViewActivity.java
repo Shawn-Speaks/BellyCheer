@@ -5,9 +5,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
@@ -171,10 +168,5 @@ public class PantryRecyclerViewActivity extends AppCompatActivity implements OnM
     }
 
 
-    private Drawable resizeSoupIcon(Drawable image){
-        Bitmap b = ((BitmapDrawable) image).getBitmap();
-        Bitmap bitMapResized = Bitmap.createScaledBitmap(b, 20, 20, false);
-        return new BitmapDrawable(getResources(), bitMapResized);
-    }
 
 }
