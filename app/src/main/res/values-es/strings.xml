@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BellyCheer</string>
+    <string name="instructions">Encuentra la comida gratis más cercana</string>
+    <string name="zipcode">código postal</string>
+    <string name="or">O</string>
+    <string name="current_location">Ubicación actual</string>
+    <string name="submit">Presione Abajo para continuar</string>
+
+    <string name="telephone">Teléfono</string>
+    <string name="service_hours">Horas de servicio</string>
+</resources>
