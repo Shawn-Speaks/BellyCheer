@@ -1,5 +1,7 @@
 package model;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.io.Serializable;
 
 public class Rows implements Serializable {
@@ -17,6 +19,7 @@ public class Rows implements Serializable {
     private String eligibility;
     private String requireddocuments;
     private String languages;
+    private LatLng latLng;
 
     public String getName() {
         return name;
@@ -72,5 +75,13 @@ public class Rows implements Serializable {
 
     public String getLanguages() {
         return languages;
+    }
+
+    public void setLatLng(LatLng latLng) {
+        this.latLng = latLng;
+    }
+
+    public LatLng getLatLng() {
+        return latLng;
     }
 }
