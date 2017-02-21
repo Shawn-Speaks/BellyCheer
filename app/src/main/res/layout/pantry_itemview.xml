@@ -33,14 +33,7 @@
             android:id="@+id/address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autoLink="all"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/city_state_zip"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autoLink="all"
+            android:autoLink="map|web"
             android:textSize="18sp" />
 
         <TextView
