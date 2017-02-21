@@ -104,7 +104,7 @@ public class PantryRecyclerViewActivity extends AppCompatActivity implements OnM
                 .build();
         PantryService service = retrofit.create(PantryService.class);
         Call<PantryResponse> call = service.getPantries("1ITPdXilVjBOLG_rxaSxeWbK-esHrY8AX3pGvixAzDXo", "4", zipCode);
-        call.enqueue(new Callback<PantryResponse>() {
+        call.enqueue(new Callback<PantryResponse>(){
             @Override
             public void onResponse(Call<PantryResponse> call, Response<PantryResponse> response) {
                 if (response.body() != (null)) {
@@ -112,12 +112,16 @@ public class PantryRecyclerViewActivity extends AppCompatActivity implements OnM
                         loadingText.setText("No Sites Found in this Location.");
                     } else {
                         loadingText.setVisibility(View.GONE);
-                        adapter = new PantryAdapter(response.body().getRows());
+                        rowList = response.body().getRows();
+                        adapter = new PantryAdapter(rowList);
+
+
                         pantryRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                         pantryRecyclerView.setAdapter(adapter);
 
                     }
                 }
+
                 for(Rows row: rowList){
                         String addressAppended = row.getStreetaddress()+", "+row.getCity()+", "+row.getState();
                         row.setLatLng(convertStringAddressToLatLng(context, addressAppended));
@@ -125,7 +129,6 @@ public class PantryRecyclerViewActivity extends AppCompatActivity implements OnM
               
                               updateMap(mMap, rowList);
             }
-        }
 
             @Override
             public void onFailure(Call<PantryResponse> call, Throwable t) {
@@ -163,7 +166,4 @@ public class PantryRecyclerViewActivity extends AppCompatActivity implements OnM
             googleMap.addMarker(new MarkerOptions().position(row.getLatLng()).title(row.getName()).icon(bitIcon));
         }
     }
-
-
-
 }
