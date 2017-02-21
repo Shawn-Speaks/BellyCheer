@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BellyCheer</string>
+    <string name="instructions">निकटतम मुफ्त भोजन खोजें</string>
+    <string name="zipcode">ज़िप कोड डालें</string>
+    <string name="or">या</string>
+    <string name="current_location">वर्तमान स्थान</string>
+    <string name="submit">नीचे प्रेस बटन शुरू करने के लिए</string>
+
+    <string name="telephone">टेलीफोन</string>
+    <string name="service_hours">सेवा घंटे</string>
+</resources>
