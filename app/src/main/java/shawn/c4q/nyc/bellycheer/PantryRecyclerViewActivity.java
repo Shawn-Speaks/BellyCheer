@@ -119,15 +119,14 @@ public class PantryRecyclerViewActivity extends AppCompatActivity implements OnM
                         pantryRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                         pantryRecyclerView.setAdapter(adapter);
 
+                        for(Rows row: rowList){
+                            String addressAppended = row.getStreetaddress()+", "+row.getCity()+", "+row.getState();
+                            row.setLatLng(convertStringAddressToLatLng(context, addressAppended));
+                        }
+
+                        updateMap(mMap, rowList);
                     }
                 }
-
-                for(Rows row: rowList){
-                        String addressAppended = row.getStreetaddress()+", "+row.getCity()+", "+row.getState();
-                        row.setLatLng(convertStringAddressToLatLng(context, addressAppended));
-                  }
-              
-                              updateMap(mMap, rowList);
             }
 
             @Override
@@ -148,11 +147,14 @@ public class PantryRecyclerViewActivity extends AppCompatActivity implements OnM
             if(address.equals(null)){
                 return null;
             }
-            Address location = address.get(0);
-            location.getLongitude();
-            location.getLatitude();
+            if(address.size()== 0){
+                return null;
+            }
+                Address location = address.get(0);
+                location.getLongitude();
+                location.getLatitude();
 
-            place = new LatLng(location.getLatitude(), location.getLongitude());
+                place = new LatLng(location.getLatitude(), location.getLongitude());
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -161,9 +163,11 @@ public class PantryRecyclerViewActivity extends AppCompatActivity implements OnM
     }
 
     private void updateMap(GoogleMap googleMap, List<Rows> rows){
-        for(Rows row: rows){
+        for(Rows row: rows) {
             BitmapDescriptor bitIcon = BitmapDescriptorFactory.fromResource(R.drawable.small_soup);
-            googleMap.addMarker(new MarkerOptions().position(row.getLatLng()).title(row.getName()).icon(bitIcon));
+            if (row.getLatLng() != null) {
+                googleMap.addMarker(new MarkerOptions().position(row.getLatLng()).title(row.getName()).icon(bitIcon));
+            }
         }
     }
 }
