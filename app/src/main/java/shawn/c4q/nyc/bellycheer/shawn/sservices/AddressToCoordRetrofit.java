@@ -15,9 +15,10 @@ import static android.content.ContentValues.TAG;
 
 public class AddressToCoordRetrofit {
 
-
     private String address;
     private AddressUrlBuilder mAddressUrlBuilder;
+    private float lat;
+    private float lng;
 
     public AddressToCoordRetrofit(String address) {
         this.address = address;
@@ -33,10 +34,11 @@ public class AddressToCoordRetrofit {
             public void onResponse(Call<GeoLocationResponse> call, Response<GeoLocationResponse> response) {
                 Log.d(TAG, "Success!");
                 GeoLocationResponse geoLocationResponse = response.body();
-                float lat = geoLocationResponse.getResultsArrayList().get(0).getGeometry().getLocation().getLat();
-                float lng = geoLocationResponse.getResultsArrayList().get(0).getGeometry().getLocation().getLng();
+                lat = geoLocationResponse.getResultsArrayList().get(0).getGeometry().getLocation().getLat();
+                lng = geoLocationResponse.getResultsArrayList().get(0).getGeometry().getLocation().getLng();
                 Log.d(TAG, String.valueOf(lat));
                 Log.d(TAG, String.valueOf(lng));
+
 
             }
 
