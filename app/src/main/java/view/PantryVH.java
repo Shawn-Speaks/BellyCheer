@@ -21,7 +21,7 @@ public class PantryVH extends RecyclerView.ViewHolder {
         super(itemView);
         name = (TextView) itemView.findViewById(R.id.name);
         address = (TextView) itemView.findViewById(R.id.address);
-        cityStateZip = (TextView) itemView.findViewById(R.id.city_state_zip);
+//        cityStateZip = (TextView) itemView.findViewById(R.id.city_state_zip);
         phone = (TextView) itemView.findViewById(R.id.phone);
         hoursOfOperation = (TextView) itemView.findViewById(R.id.hours_of_operation);
         description = (TextView) itemView.findViewById(R.id.description);
@@ -30,11 +30,8 @@ public class PantryVH extends RecyclerView.ViewHolder {
     public void onBind(Rows rows) {
         description.setText(rows.getBriefdescription());
         name.setText(rows.getName());
-        address.setText(rows.getStreetaddress());
-        cityStateZip.setText(rows.getCity() + ", " + rows.getState() + " " + Integer.toString(rows.getZipcode()));
-        Linkify.addLinks(address, Linkify.ALL);
-        Linkify.addLinks(cityStateZip, Linkify.ALL);
-        phone.setText(rows.getPhonenumber());
+        address.setText(rows.getStreetaddress() + "\n" + rows.getCity() + " " + rows.getState() + " " + Integer.toString(rows.getZipcode()));
+        Linkify.addLinks(address, Linkify.MAP_ADDRESSES);phone.setText(rows.getPhonenumber());
         Linkify.addLinks(phone, Linkify.PHONE_NUMBERS);
         hoursOfOperation.setText(rows.getHoursofoperation());
 
