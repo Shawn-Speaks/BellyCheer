@@ -114,8 +114,6 @@ public class PantryRecyclerViewActivity extends AppCompatActivity implements OnM
                         loadingText.setVisibility(View.GONE);
                         rowList = response.body().getRows();
                         adapter = new PantryAdapter(rowList);
-
-
                         pantryRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                         pantryRecyclerView.setAdapter(adapter);
 
