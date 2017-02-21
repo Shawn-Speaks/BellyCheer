@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">BellyCheer</string>
+    <string name="instructions">Find Your Nearest Food Pantry or Soup Kitchen</string>
+    <string name="zipcode">Enter Zip Code</string>
+    <string name="or">OR</string>
+    <string name="current_location">By Current Location</string>
+    <string name="submit">Press Below to Continue</string>
+
+    <string name="telephone">Telephone</string>
+    <string name="service_hours">Service Hours</string>
 </resources>
